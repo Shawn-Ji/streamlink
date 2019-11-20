@@ -164,7 +164,7 @@ class AfreecaTV(Plugin):
 
         print(f"channel = {channel}")
         (broadcast, rmd, cdn) = (channel["BNO"], channel["RMD"], channel["CDN"])
-        rmd = "http://resourcemanager.afreecatv.com:9090"
+        cdn = "gs_cdn"
         if not (broadcast and rmd and cdn):
             return
 
