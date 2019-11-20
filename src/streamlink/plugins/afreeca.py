@@ -11,7 +11,7 @@ STREAM_INFO_URLS = "{rmd}/broad_stream_assign.html"
 CHANNEL_RESULT_ERROR = 0
 CHANNEL_RESULT_OK = 1
 
-QUALITYS = ["original", "hd", "sd"]
+QUALITYS = ["hd", "sd"]
 
 QUALITY_WEIGHTS = {
     "original": 1080,
@@ -164,7 +164,6 @@ class AfreecaTV(Plugin):
 
         print(f"channel = {channel}")
         (broadcast, rmd, cdn) = (channel["BNO"], channel["RMD"], channel["CDN"])
-        cdn = "gs_cdn"
         if not (broadcast and rmd and cdn):
             return
 
