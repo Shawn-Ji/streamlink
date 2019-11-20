@@ -11,7 +11,7 @@ STREAM_INFO_URLS = "{rmd}/broad_stream_assign.html"
 CHANNEL_RESULT_ERROR = 0
 CHANNEL_RESULT_OK = 1
 
-QUALITYS = ["sd"]
+QUALITYS = ["original", "hd", "sd"]
 
 QUALITY_WEIGHTS = {
     "original": 1080,
