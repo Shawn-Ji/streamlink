@@ -162,7 +162,6 @@ class AfreecaTV(Plugin):
         elif channel.get("RESULT") != CHANNEL_RESULT_OK:
             return
 
-        print(f"channel = {channel}")
         (broadcast, rmd, cdn) = (channel["BNO"], channel["RMD"], channel["CDN"])
         if not (broadcast and rmd and cdn):
             return
