@@ -31,7 +31,7 @@ class AfreecaHLSStream(HLSStream):
     r"https?://play\.afreecatv\.com/(?P<username>\w+)(?:/(?P<bno>:\d+))?"
 ))
 class AfreecaTV(Plugin):
-    _re_bno = re.compile(r"var nBroadNo = (?P<bno>\d+);")
+    _re_bno = re.compile(r"nBroadNo = (?P<bno>\d+);")
 
     CHANNEL_API_URL = "http://live.afreecatv.com/afreeca/player_live_api.php"
     CHANNEL_RESULT_OK = 1
