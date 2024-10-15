@@ -28,12 +28,12 @@ class AfreecaHLSStream(HLSStream):
 
 
 @pluginmatcher(re.compile(
-    r"https?://play\.afreecatv\.com/(?P<username>\w+)(?:/(?P<bno>:\d+))?"
+    r"https?://play\.sooplive\.co\.kr/(?P<username>\w+)(?:/(?P<bno>:\d+))?"
 ))
 class AfreecaTV(Plugin):
     _re_bno = re.compile(r"nBroadNo = (?P<bno>\d+);")
 
-    CHANNEL_API_URL = "http://live.afreecatv.com/afreeca/player_live_api.php"
+    CHANNEL_API_URL = "http://live.sooplive.co.kr/afreeca/player_live_api.php"
     CHANNEL_RESULT_OK = 1
     QUALITYS = ["original", "hd", "sd"]
     QUALITY_WEIGHTS = {
@@ -165,7 +165,7 @@ class AfreecaTV(Plugin):
             "isSaveJoin": "false",
             "isLoginRetain": "Y",
         }
-        res = self.session.http.post("https://login.afreecatv.com/app/LoginAction.php", data=data)
+        res = self.session.http.post("https://login.sooplive.co.kr/app/LoginAction.php", data=data)
         data = self.session.http.json(res)
         log.trace(f"{data!r}")
         if data["RESULT"] == self.CHANNEL_RESULT_OK:
@@ -178,7 +178,7 @@ class AfreecaTV(Plugin):
         login_username = self.get_option("username")
         login_password = self.get_option("password")
 
-        self.session.http.headers.update({"Referer": self.url, "Origin": "http://play.afreecatv.com"})
+        self.session.http.headers.update({"Referer": self.url, "Origin": "http://play.sooplive.co.kr"})
 
         if self.options.get("purge_credentials"):
             self.clear_cookies()
