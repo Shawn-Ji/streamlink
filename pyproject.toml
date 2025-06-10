@@ -53,7 +53,7 @@ dynamic = [
   "gui-scripts",
 ]
 
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 dependencies = [
   "certifi",
   "exceptiongroup ; python_version<'3.11'",
